@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Booking</title>
+</head>
+<body>
+
+    <button onclick="openBooking()">Book Ticket</button>
+
+    <div id="bookingWindow" style="display:none;">
+        <h2>Movie Ticket Booking</h2>
+
+        <input id="name" placeholder="Enter your name">
+        <br><br>
+
+        <button onclick="bookTicket()">Confirm Booking</button>
+    </div>
+
+    <script>
+        function openBooking() {
+            document.getElementById("bookingWindow").style.display = "block";
+        }
+
+        function bookTicket() {
+            let name = document.getElementById("name").value;
+
+            if (name === "") {
+                alert("Please enter your name");
+                return;
+            }
+
+            alert("Booking successful!");
+
+            // Close/hide the booking window
+            document.getElementById("bookingWindow").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

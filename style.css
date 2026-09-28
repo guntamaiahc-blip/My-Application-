@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
+
+header {
+  background: #d9233f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 6px;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.movie-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
+}
+
+.poster {
+  height: 180px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+  font-size: 55px;
+}
+
+.movie-card h3 {
+  margin-bottom: 6px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+.book {
+  background: #d9233f;
+  color: white;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  z-index: 10;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  width: min(600px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  background: #eee;
+  font-size: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+.seat-map {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 7px;
+  margin: 15px 0;
+}
+
+.seat {
+  background: #ddd;
+  padding: 9px 2px;
+  font-size: 12px;
+}
+
+.seat.selected {
+  background: #28a745;
+  color: white;
+}
+
+.seat.booked {
+  background: #555;
+  color: white;
+  cursor: not-allowed;
+}
+
+.total {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.confirm {
+  margin-top: 18px;
+  background: #d9233f;
+  color: white;
+  width: 100%;
+}
+
+.success {
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .seat-map {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
